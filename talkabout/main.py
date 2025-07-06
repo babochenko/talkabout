@@ -53,7 +53,7 @@ Your response must be ONE LINE of executable Python code ONLY using 'obj' as the
         code = code.strip()
         
         try:
-            print('Returned code:', code)
+            print('Executing code:', code)
             print()
 
             res = eval(code, {"obj": self.obj})

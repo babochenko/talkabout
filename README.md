@@ -33,7 +33,7 @@ from talkabout import Talk
 Talk(3)('+ 1')
 
 # printed output
-Returned code: obj + 1
+Executing code: obj + 1
 
 Out[2]: 4
 ```
@@ -50,7 +50,7 @@ from talkabout import Talk
 Talk(pypl)('qoq Oper CF over debt; use .loc')
 
 # printed output
-Returned code: pypl.quarterly_cash_flow.loc['Operating Cash Flow'].pct_change() / pypl.quarterly_balancesheet.loc['Total Debt']
+Executing code: pypl.quarterly_cash_flow.loc['Operating Cash Flow'].pct_change() / pypl.quarterly_balancesheet.loc['Total Debt']
 
 Out[6]:
 2025-03-31             NaN
