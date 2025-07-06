@@ -12,9 +12,12 @@ class Talk():
         self.client = Anthropic(api_key=self.api_key)
 
     def code(self, prompt):
-        return self.__call__(prompt)
+        return self.__call__(prompt, dry=False)
 
-    def __call__(self, prompt):
+    def dry(self, prompt):
+        return self.__call__(prompt, dry=True)
+
+    def __call__(self, prompt, dry: bool):
         # Get detailed info about the object
         obj_info = self._get_object_info()
         
@@ -55,6 +58,9 @@ Your response must be ONE LINE of executable Python code ONLY using 'obj' as the
         if code.endswith('```'):
             code = code[:-3]
         code = code.strip()
+
+        if dry:
+            return code
         
         try:
             print('Executing code:', code)
