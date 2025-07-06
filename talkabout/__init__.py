@@ -12,6 +12,6 @@ __author__ = "AI Assistant"
 __email__ = "ai@example.com"
 __description__ = "AI-powered object query proxy using OpenAI"
 
-from .main import Proxy
+from .main import Talk
 
-__all__ = ["Proxy"]
+__all__ = ["Talk"]
