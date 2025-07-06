@@ -47,7 +47,7 @@ pypl = yf.Ticker('PYPL')
 
 from talkabout import Talk
 
-Talk(pypl)('qoq Oper CF over debt')
+Talk(pypl)('qoq Oper CF over debt; use .loc')
 
 # printed output
 Returned code: pypl.quarterly_cash_flow.loc['Operating Cash Flow'].pct_change() / pypl.quarterly_balancesheet.loc['Total Debt']
