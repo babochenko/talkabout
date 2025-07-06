@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="talkabout",
-    version="0.1.0",
+    version="0.1.2",
     author="Denis Babochenko",
     description="AI-powered object query proxy using Claude AI",
     long_description=open("README.md").read(),
