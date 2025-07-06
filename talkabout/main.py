@@ -11,6 +11,9 @@ class Talk():
             raise ValueError("Anthropic API key is required. Pass it as api_key parameter or set ANTHROPIC_API_KEY environment variable.")
         self.client = Anthropic(api_key=self.api_key)
 
+    def code(self, prompt):
+        return self.__call__(prompt)
+
     def __call__(self, prompt):
         # Get detailed info about the object
         obj_info = self._get_object_info()
@@ -63,6 +66,26 @@ Your response must be ONE LINE of executable Python code ONLY using 'obj' as the
             return res
         except Exception as e:
             return f"❌ Error: {e} for response: {code}"
+    
+    def chat(self, query: str) -> str:
+        """Chat with Claude about the object, returning the full string response."""
+        obj_info = self._get_object_info()
+        
+        full_prompt = f"""You are a Python expert. Here's detailed information about an object:
+
+{obj_info}
+
+User question: {query}
+
+Please provide a helpful response about this object."""
+
+        response = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": full_prompt}]
+        )
+        
+        return response.content[0].text
     
     def _get_object_info(self):
         """Get detailed information about the object's structure and available data."""
