@@ -1,2 +1,2 @@
 # Core dependencies
-openai>=1.0.0
+anthropic>=1.0.0

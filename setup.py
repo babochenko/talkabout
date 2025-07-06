@@ -1,5 +1,5 @@
 """
-Setup configuration for the pyllm package.
+Setup configuration for the talkabout package.
 """
 
 from setuptools import setup, find_packages
@@ -8,11 +8,10 @@ setup(
     name="talkabout",
     version="0.1.0",
     author="Denis Babochenko",
-    author_email="babochenko.denis2@gmail.com",
-    description="AI-powered object query proxy using OpenAI",
-    long_description="TalkAbout allows you to query any Python object using natural language. Simply wrap your object in a Proxy and ask questions about it in plain English. The AI will generate the appropriate Python code to access or compute the requested information.",
-    long_description_content_type="text/plain",
-    url="https://github.com/yourusername/talkabout",
+    description="AI-powered object query proxy using Claude AI",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/babochenko/talkabout",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

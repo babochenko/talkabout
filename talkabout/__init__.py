@@ -8,9 +8,9 @@ to access or compute the requested information.
 """
 
 __version__ = "0.1.0"
-__author__ = "AI Assistant"
-__email__ = "ai@example.com"
-__description__ = "AI-powered object query proxy using OpenAI"
+__author__ = "Denis Babochenko"
+__email__ = "babochenko.denis2@gmail.com"
+__description__ = "AI-powered object query proxy using Claude AI"
 
 from .main import Talk
 

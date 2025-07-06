@@ -1,11 +1,38 @@
-Executes arbitrary queries against any object. Uses Claude AI under the hood. Requires either an `api_key` param or an `ANTHROPIC_API_KEY` env var
+# TalkAbout
+
+AI-powered object query proxy using Claude AI. Query any Python object using natural language and get Python code executed automatically.
+
+## Installation
+
+```bash
+pip install talkabout
+```
+
+## Setup
+
+You'll need an Anthropic API key. Set it as an environment variable:
+
+```bash
+export ANTHROPIC_API_KEY="your-api-key-here"
+```
+
+Or pass it directly when creating a Talk instance:
+
+```python
+from talkabout import Talk
+talk = Talk(my_object, api_key="your-api-key-here")
+```
+
+## Usage
 
 Simple example:
 
 ```python
-[ins] In [1]: from talkabout import Talk
+from talkabout import Talk
 
-[ins] In [2]: Talk(3)('+ 1')
+Talk(3)('+ 1')
+
+# printed output
 Returned code: obj + 1
 
 Out[2]: 4
@@ -14,13 +41,15 @@ Out[2]: 4
 A more complicated example:
 
 ```python
-[ins] In [3]: import yfinance as yf
+import yfinance as yf
 
-[ins] In [4]: pypl = yf.Ticker('PYPL')
+pypl = yf.Ticker('PYPL')
 
-[ins] In [5]: from talkabout import Talk
+from talkabout import Talk
 
-[ins] In [6]: Talk(pypl)('qoq Oper CF over debt')
+Talk(pypl)('qoq Oper CF over debt')
+
+# printed output
 Returned code: pypl.quarterly_cash_flow.loc['Operating Cash Flow'].pct_change() / pypl.quarterly_balancesheet.loc['Total Debt']
 
 Out[6]:
