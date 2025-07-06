@@ -1,0 +1,11 @@
+# Core dependencies
+openai>=1.0.0
+
+# Optional dependencies for examples
+yfinance>=0.2.0
+
+# Development dependencies (optional, can also use pip install -e .[dev])
+# pytest>=6.0
+# black>=22.0
+# flake8>=4.0
+# mypy>=0.900
