@@ -1,5 +1,7 @@
 # TalkAbout
 
+[![PyPI version](https://badge.fury.io/py/talkabout.svg)](https://badge.fury.io/py/talkabout)
+
 AI-powered object query proxy using Claude AI. Query any Python object using natural language and get Python code executed automatically.
 
 ## Installation
