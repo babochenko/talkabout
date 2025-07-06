@@ -1,4 +1,4 @@
-Executes arbitrary queries against any object. Uses ChatGPT under the hood. Requires either an `api_key` param or an `OPENAI_API_KEY` env var
+Executes arbitrary queries against any object. Uses Claude AI under the hood. Requires either an `api_key` param or an `ANTHROPIC_API_KEY` env var
 
 Simple example:
 

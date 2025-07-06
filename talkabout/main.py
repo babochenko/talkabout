@@ -1,14 +1,14 @@
-from openai import OpenAI
+from anthropic import Anthropic
 import os
 
 
 class Talk():
     def __init__(self, obj, api_key=None):
         self.obj = obj
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
         if not self.api_key:
-            raise ValueError("OpenAI API key is required. Pass it as api_key parameter or set OPENAI_API_KEY environment variable.")
-        self.client = OpenAI(api_key=self.api_key)
+            raise ValueError("Anthropic API key is required. Pass it as api_key parameter or set ANTHROPIC_API_KEY environment variable.")
+        self.client = Anthropic(api_key=self.api_key)
 
     def __call__(self, prompt):
         # Get detailed info about the object
@@ -36,11 +36,12 @@ obj.history(period='1y')['Close'].mean()
 
 Your response must be ONE LINE of executable Python code ONLY using 'obj' as the variable name."""
 
-        response = self.client.chat.completions.create(
-            model="gpt-4",
+        response = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=1024,
             messages=[{"role": "user", "content": full_prompt}]
         )
-        code = response.choices[0].message.content.strip()
+        code = response.content[0].text.strip()
         
         # Remove any markdown formatting that might slip through
         if code.startswith('```python'):
