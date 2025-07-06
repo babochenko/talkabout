@@ -4,7 +4,7 @@
 
 _(inspired by [https://github.com/awwaiid/gremllm](https://github.com/awwaiid/gremllm))_
 
-AI-powered object query proxy using Claude AI. Query any Python object using natural language and get Python code executed automatically.
+Ask anything about any Python object using natural language and get Python code executed automatically. Passes the object's `repr()` and your query to Claude API. For now, Claude responds to the system query with single-line code statements only
 
 ## Installation
 
@@ -46,7 +46,7 @@ Executing code: np.percentile(obj, 90)
 Out[1]: np.float64(0.8442100946036629)
 ```
 
-A more complicated example - inspect financials of a company using Yahoo Finance API:
+A more complicated example - inspect financials of a company using Yahoo Finance API (this use-case actually motivated this package, because those yfinance dataframes are messy):
 
 ```python
 import yfinance as yf
