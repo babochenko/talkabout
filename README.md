@@ -51,6 +51,7 @@ Returns:
 np.float64(0.8442100946036629)
 ```
 
+## Dry mode
 You can also do a dry run, which prints out the code without executing it:
 
 ```python
@@ -62,6 +63,7 @@ Returns a string:
 'np.percentile(obj, 90)'
 ```
 
+## Chat without running code
 The .chat() method just asks a question and returns a textual response:
 
 ```python
@@ -78,6 +80,7 @@ Returns a string:
 'Let me help you evaluate the Adam optimizer:\n\nAdam is generally considered ...'
 ```
 
+## External libraries support
 A more complicated example - inspect financials of a company using Yahoo Finance API (this use-case actually motivated this package, because those yfinance dataframes are messy):
 
 ```python
