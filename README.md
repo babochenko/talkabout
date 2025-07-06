@@ -1,4 +1,4 @@
-# TalkAbout
+# talkabout
 
 [![PyPI version](https://badge.fury.io/py/talkabout.svg)](https://badge.fury.io/py/talkabout)
 
