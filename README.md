@@ -27,17 +27,21 @@ talk = Talk(my_object, api_key="your-api-key-here")
 
 ## Usage
 
-Simple example:
+A simple example:
 
 ```python
+import numpy as np
 from talkabout import Talk
 
-Talk(3)('+ 1')
+x = np.random.uniform(size=50)
+
+talk = Talk(x)
+talk('90th percentile')
 
 # printed output
-Executing code: obj + 1
+Executing code: np.percentile(obj, 90)
 
-Out[2]: 4
+Out[1]: np.float64(0.8442100946036629)
 ```
 
 A more complicated example - inspect financials of a company using Yahoo Finance API:

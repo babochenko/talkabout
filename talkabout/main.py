@@ -1,5 +1,6 @@
 from anthropic import Anthropic
 import os
+import inspect
 
 
 class Talk():
@@ -56,7 +57,9 @@ Your response must be ONE LINE of executable Python code ONLY using 'obj' as the
             print('Executing code:', code)
             print()
 
-            res = eval(code, {"obj": self.obj})
+            # Get caller's globals to access their imported libraries
+            caller_globals = inspect.currentframe().f_back.f_globals
+            res = eval(code, {**caller_globals, "obj": self.obj})
             return res
         except Exception as e:
             return f"❌ Error: {e} for response: {code}"
