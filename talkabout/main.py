@@ -56,7 +56,6 @@ Your response must be ONE LINE of executable Python code ONLY using 'obj' as the
             print()
 
             res = eval(code, {"obj": self.obj})
-            print('Result:', res)
             return res
         except Exception as e:
             return f"❌ Error: {e} for response: {code}"
