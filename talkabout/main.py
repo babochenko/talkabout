@@ -17,7 +17,7 @@ class Talk():
     def dry(self, prompt):
         return self.__call__(prompt, dry=True)
 
-    def __call__(self, prompt, dry: bool):
+    def __call__(self, prompt, dry: bool = False):
         # Get detailed info about the object
         obj_info = self._get_object_info()
         

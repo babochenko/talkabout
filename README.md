@@ -39,14 +39,30 @@ x = np.random.uniform(size=50)
 
 talk = Talk(x)
 talk('90th percentile')
-
-# printed output
-Executing code: np.percentile(obj, 90)
-
-Out[1]: np.float64(0.8442100946036629)
 ```
 
-You can also use the .chat() method to just ask a question and get a textual response:
+Prints:
+```
+Executing code: np.percentile(obj, 90)
+```
+
+Returns:
+```python
+np.float64(0.8442100946036629)
+```
+
+You can also do a dry run, which prints out the code without executing it:
+
+```python
+talk.dry('90th percentile')
+```
+
+Returns a string:
+```
+'np.percentile(obj, 90)'
+```
+
+The .chat() method just asks a question and returns a textual response:
 
 ```python
 import torch
@@ -55,9 +71,11 @@ from talkabout import Talk
 optimizer = torch.optim.Adam([torch.Tensor([0.0])], lr=0.001)
 talk = Talk(optimizer)
 talk.chat('is this the best optimiser ever?')
+```
 
-# printed output
-Out[6]: 'Let me help you evaluate the Adam optimizer:\n\nAdam is generally considered ...'
+Returns a string:
+```
+'Let me help you evaluate the Adam optimizer:\n\nAdam is generally considered ...'
 ```
 
 A more complicated example - inspect financials of a company using Yahoo Finance API (this use-case actually motivated this package, because those yfinance dataframes are messy):
@@ -70,11 +88,15 @@ pypl = yf.Ticker('PYPL')
 
 talk = Talk(pypl)
 talk('qoq Oper CF over debt; use .loc')
+```
 
-# printed output
+Prints:
+```
 Executing code: pypl.quarterly_cash_flow.loc['Operating Cash Flow'].pct_change() / pypl.quarterly_balancesheet.loc['Total Debt']
+```
 
-Out[6]:
+Returns a `pandas.Series`:
+```
 2025-03-31             NaN
 2024-12-31    1.076823e-10
 2024-09-30   -3.265984e-11
