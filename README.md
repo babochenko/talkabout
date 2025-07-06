@@ -46,6 +46,20 @@ Executing code: np.percentile(obj, 90)
 Out[1]: np.float64(0.8442100946036629)
 ```
 
+You can also use the .chat() method to just ask a question and get a textual response:
+
+```python
+import torch
+from talkabout import Talk
+
+optimizer = torch.optim.Adam([torch.Tensor([0.0])], lr=0.001)
+talk = Talk(optimizer)
+talk.chat('is this the best optimiser ever?')
+
+# printed output
+Out[6]: 'Let me help you evaluate the Adam optimizer:\n\nAdam is generally considered ...'
+```
+
 A more complicated example - inspect financials of a company using Yahoo Finance API (this use-case actually motivated this package, because those yfinance dataframes are messy):
 
 ```python
