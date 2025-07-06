@@ -4,7 +4,7 @@
 
 _(inspired by [https://github.com/awwaiid/gremllm](https://github.com/awwaiid/gremllm))_
 
-Ask anything about any Python object using natural language and get Python code executed automatically. Passes the object's `repr()` and your query to Claude API. For now, Claude responds to the system query with single-line code statements only
+Ask anything about any Python object using natural language and get Python code executed automatically. Passes the object's `repr()` and your query to Claude API
 
 ## Installation
 
