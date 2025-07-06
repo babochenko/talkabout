@@ -40,15 +40,13 @@ Executing code: obj + 1
 Out[2]: 4
 ```
 
-A more complicated example:
+A more complicated example - inspect financials of a company using Yahoo Finance API:
 
 ```python
 import yfinance as yf
-
-pypl = yf.Ticker('PYPL')
-
 from talkabout import Talk
 
+pypl = yf.Ticker('PYPL')
 Talk(pypl)('qoq Oper CF over debt; use .loc')
 
 # printed output
