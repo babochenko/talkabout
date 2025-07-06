@@ -38,14 +38,6 @@ setup(
             "black>=22.0",
             "flake8>=4.0",
             "mypy>=0.900",
-        ],
-        "finance": [
-            "yfinance>=0.2.0",
-        ],
-    },
-    entry_points={
-        "console_scripts": [
-            "talkabout=talkabout.main:main",
-        ],
-    },
+        ]
+    }
 )
